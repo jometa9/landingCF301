@@ -1,0 +1,91 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 13%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 267 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 267 100% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 267 100% 61%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#202020] text-foreground font-satoshi;
+  }
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-purple-500;
+}
+
+/* Neon Effects */
+.neon-glow {
+  text-shadow: 0 0 10px theme('colors.purple.500'),
+               0 0 20px theme('colors.purple.500'),
+               0 0 30px theme('colors.purple.500');
+}
+
+.neon-border {
+  box-shadow: 0 0 5px theme('colors.purple.500'),
+              0 0 10px theme('colors.purple.500'),
+              inset 0 0 5px theme('colors.purple.500');
+}
+
+/* Grid Pattern */
+.grid-pattern {
+  background-image: linear-gradient(to right, #2A2A2A 1px, transparent 1px),
+                    linear-gradient(to bottom, #2A2A2A 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 110%);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(32, 32, 32, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
